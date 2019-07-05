@@ -19,7 +19,6 @@ class App extends Component {
 
   render() {
     let donuts = this.state.donuts.map(donut => {
-      console.log(donut)
       return <Donut color={this.state.color2} key= {shortid.generate()} />
 
     })
