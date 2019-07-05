@@ -8,23 +8,32 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      donuts: [1,2,3,4,5,6]
+      numbers: [1,2,3,4,5,6],
+      donuts: []
     };
   }
 
 
-  componentDidMount = () => {
-  };
+  freshPalette = () => {
+    let donuts = this.state.numbers.map(donut => {
+      return <Donut key= {shortid.generate()} />
+    })
+    this.setState({donuts})
+}
+
+componentDidMount = () =>{
+  let donuts = this.state.numbers.map(donut => {
+    return <Donut key= {shortid.generate()} />
+  })
+  this.setState({donuts})
+}
 
 
   render() {
-    let donuts = this.state.donuts.map(donut => {
-      return <Donut key= {shortid.generate()} />
-
-    })
     return (
       <div className="App">
-      {donuts}
+      {this.state.donuts}
+      <button onClick={()=> this.freshPalette()}>GET COLORS</button>
       </div>
     );
   }

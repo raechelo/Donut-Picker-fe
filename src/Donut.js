@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./App.css";
+
 export class Donut extends Component {
   randomColorGen = () => {
     let randomColor = "#000000".replace(/0/g, function() {
@@ -8,7 +10,7 @@ export class Donut extends Component {
   };
   render() {
     return (
-      <svg
+      <svg className="donuts"
         id="Capa_1"
         viewBox="0 0 512.094 512.094"
         width="512"
