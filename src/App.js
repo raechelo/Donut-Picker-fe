@@ -33,7 +33,7 @@ componentDidMount = () =>{
     return (
       <div className="App">
       {this.state.donuts}
-      <button onClick={()=> this.freshPalette()}>CLICK</button>
+      <button onClick={()=> this.freshPalette()}>GET COLORS</button>
       </div>
     );
   }
