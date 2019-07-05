@@ -10,7 +10,6 @@ export class Donut extends Component {
     return (
       <svg
         id="Capa_1"
-        enable-background="new 0 0 512.094 512.094"
         viewBox="0 0 512.094 512.094"
         width="512"
         xmlns="http://www.w3.org/2000/svg"
