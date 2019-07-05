@@ -19,7 +19,7 @@ class App extends Component {
 
   render() {
     let donuts = this.state.donuts.map(donut => {
-      return <Donutkey= {shortid.generate()} />
+      return <Donut key= {shortid.generate()} />
 
     })
     return (
