@@ -6,6 +6,7 @@ export const Container = (props) => {
             <div className="container">
             <div className="donuts-area">
             {props.donuts} 
+            <button onClick={()=> props.freshPalette()}>GET COLORS</button>
             </div>
             
             </div>

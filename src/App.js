@@ -29,8 +29,8 @@ componentDidMount = () =>{
   render() {
     return (
       <div className="App">
-      <Container donuts={this.state.donuts} />
-      <button onClick={()=> this.freshPalette()}>GET COLORS</button>
+      <Container donuts={this.state.donuts} freshPalette={this.freshPalette} />
+      
       </div>
     );
   }
