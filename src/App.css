@@ -1,23 +1,29 @@
 .body{
   margin: 0;
 }
+svg{
+  width: 30%;
+}
 
-.donuts{
-  width: 350px;
-  height: 200px;
-  margin: 20px;
+.donut{
+  margin: 10px;
 
 }
 .App{
+  background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
+  background-size: 100%
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+}
+
+.donuts-area{
+  grid-column: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-bottom: 10px;
-  background-size: 100%;
-  
 }
 
 
@@ -25,6 +31,7 @@ button{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   width: 400px;
   height: 40px;
   border-radius: 15px;
