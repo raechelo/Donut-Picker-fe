@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Donut from "./Donut";
+import Container from './Container';
 const shortid = require('shortid');
- 
 
 class App extends Component {
   constructor() {
@@ -14,26 +14,23 @@ class App extends Component {
   }
 
 
-  freshPalette = () => {
-    let donuts = this.state.numbers.map(donut => {
-      return <Donut key= {shortid.generate()} />
-    })
-    this.setState({donuts})
-}
-
-componentDidMount = () =>{
+freshPalette = () => {
   let donuts = this.state.numbers.map(donut => {
     return <Donut key= {shortid.generate()} />
   })
   this.setState({donuts})
 }
 
+componentDidMount = () =>{
+  this.freshPalette()
+}
+
 
   render() {
     return (
       <div className="App">
-      {this.state.donuts}
-      <button onClick={()=> this.freshPalette()}>GET COLORS</button>
+      <Container donuts={this.state.donuts} freshPalette={this.freshPalette} />
+      
       </div>
     );
   }
