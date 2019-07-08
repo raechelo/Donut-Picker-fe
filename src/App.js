@@ -1,52 +1,85 @@
 import React, { Component } from "react";
 import "./App.css";
 import Donut from "./Donut";
-import Container from './Container';
-const shortid = require('shortid');
+import Container from "./Container";
+const shortid = require("shortid");
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      numbers: [1,2,3,4,5,6],
+      numbers: [0, 1, 2, 3, 4, 5],
       contents: [],
-      projects: false
+      projects: false,
+      favorites: [],
+      index: []
     };
   }
 
+  freshPalette = () => {
+    let contents = this.state.numbers.map(number => {
+      if (this.state.index.includes(number)) {
+        console.log(this.state.favorites[number])
+        return (
+          <Donut
+            key={shortid.generate()}
+            saveFavorites={this.saveFavorites}
+            index={number}
+            fill={"cyan"}
 
-freshPalette = () => {
-  let contents = this.state.numbers.map(donut => {
-    return <Donut key= {shortid.generate()} />
-  })
-  this.setState({contents})
-}
+            // fill={this.state.favorites[number].color}
+          />
+        );
+      }else {
+        return (
+          <Donut
+            key={shortid.generate()}
+            saveFavorites={this.saveFavorites}
+            index={number}
+            fill={this.randomColorGen()}
+          />
+        );
 
-toggleView = () => {
+      }
+    });
+    this.setState({ contents });
+  };
 
-  let contents = <h1>Toggled!</h1>
-  this.setState({contents})
-  this.setState({projects: !this.state.projects})
-}
+  randomColorGen = () => {
+    let fill = "#000000".replace(/0/g, () => {
+      return (~~(Math.random() * 16)).toString(16);
+    });
+    return fill;
+  };
 
+  saveFavorites = (color, index) => {
+    let newColor = { color, index };
+    let favorites = this.state.favorites;
+    let indexValue = this.state.index;
+    indexValue.push(index)
+    favorites.push(newColor);
+    this.setState({index: indexValue})
+    this.setState({ favorites });
+  };
 
-componentDidMount = () => {
-  this.freshPalette()
-}
+  toggleView = () => {
+    let contents = <h1>Toggled!</h1>;
+    this.setState({ contents });
+    this.setState({ projects: !this.state.projects });
+  };
 
+  componentDidMount = () => {
+    this.freshPalette();
+  };
 
   render() {
-    let button;
-  if(!this.state.projects){
-    console.log("making palettes")
-    button = <button onClick={() => this.toggleView()}> VIEW PROJECTS </button>
-  }else{
-    button = <h3>Projects!</h3>
-  }
     return (
       <div className="App">
-      <Container donuts={this.state.contents} freshPalette={this.freshPalette} />
-        {button}
+        <Container
+          donuts={this.state.contents}
+          freshPalette={this.freshPalette}
+          toggleView={this.toggleView}
+        />
       </div>
     );
   }
