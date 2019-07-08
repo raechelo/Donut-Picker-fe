@@ -12,22 +12,19 @@ class App extends Component {
       contents: [],
       projects: false,
       favorites: [],
-      index: []
+      donutIndex: []
     };
   }
 
   freshPalette = () => {
-    let contents = this.state.numbers.map(number => {
-      if (this.state.index.includes(number)) {
-        console.log(this.state.favorites[number])
+    let contents = this.state.numbers.map(index => {
+      if (this.state.donutIndex.includes(index)) {
         return (
           <Donut
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
-            index={number}
-            fill={"cyan"}
-
-            // fill={this.state.favorites[number].color}
+            index={index}
+            fill={this.state.favorites.find(donut => donut.index === index ).color}
           />
         );
       }else {
@@ -35,7 +32,7 @@ class App extends Component {
           <Donut
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
-            index={number}
+            index={index}
             fill={this.randomColorGen()}
           />
         );
@@ -55,11 +52,12 @@ class App extends Component {
   saveFavorites = (color, index) => {
     let newColor = { color, index };
     let favorites = this.state.favorites;
-    let indexValue = this.state.index;
+    let indexValue = this.state.donutIndex;
     indexValue.push(index)
     favorites.push(newColor);
-    this.setState({index: indexValue})
+    this.setState({donutIndex: indexValue})
     this.setState({ favorites });
+    console.log(this.state.favorites)
   };
 
   toggleView = () => {

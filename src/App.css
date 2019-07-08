@@ -1,4 +1,9 @@
 
+*{
+  font-family: 'Neuton', serif;
+
+}
+
 .donut,
 svg{
   width: 27%;
