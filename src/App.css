@@ -1,11 +1,12 @@
 
+.donut,
 svg{
-  width: 26%;
+  width: 27%;
+  display: inline;
+  margin: 10px;
 }
-
 .donut{
-  margin: 30px;
-
+  height: 45%
 }
 .App{
   background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
@@ -21,9 +22,10 @@ svg{
 
 .donuts-area{
   grid-column: 2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-flow: row;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
 
@@ -32,10 +34,11 @@ button{
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  width: 250px;
+  width: 280px;
   border-radius: 15px;
   border: 4.5px solid black;
   font-size: 30px;
   font-weight: 700;
 
 }
+
