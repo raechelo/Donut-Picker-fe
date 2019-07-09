@@ -11,18 +11,17 @@ export class Container extends Component {
   }
 
   projectView = () => {
-    this.setState({ projectView: !this.state.projectView });
-    this.props.projectView();
+    this.setState({ projectView: true });
   };
 
   newPalettes = () => {
-    this.setState({ projectView: !this.state.projectView });
+    this.setState({ projectView: false });
     this.props.freshPalette();
   };
 
   validateContents = () => {
     if (this.state.projectView) {
-      return "Hello World";
+      return( <h1>Hello World</h1>);
     } else {
       return this.props.donuts;
     }
