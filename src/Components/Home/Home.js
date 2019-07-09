@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import "./App.css";
-import Donut from "./Donut";
-import Container from "./Container";
+import React, { Component } from 'react'
+import Container from "../Container/Container";
+import Donut from "../Donut/Donut";
 const shortid = require("shortid");
 
-class App extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.state = {
@@ -82,5 +81,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

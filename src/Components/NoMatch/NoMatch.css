@@ -1,0 +1,5 @@
+.NoMatch {
+  background-image: url('../../assets/closed2.jpeg');
+  background-size: 100%;
+  filter: blur(6px);
+}
