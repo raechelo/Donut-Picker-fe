@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import Container from "../Container/Container";
 import Donut from "../Donut/Donut";
 const shortid = require("shortid");
@@ -23,10 +23,12 @@ export default class Home extends Component {
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
             index={index}
-            fill={this.state.favorites.find(donut => donut.index === index ).color}
+            fill={
+              this.state.favorites.find(donut => donut.index === index).color
+            }
           />
         );
-      }else {
+      } else {
         return (
           <Donut
             key={shortid.generate()}
@@ -35,7 +37,6 @@ export default class Home extends Component {
             fill={this.randomColorGen()}
           />
         );
-
       }
     });
     this.setState({ contents });
@@ -52,11 +53,11 @@ export default class Home extends Component {
     let newColor = { color, index };
     let favorites = this.state.favorites;
     let indexValue = this.state.donutIndex;
-    indexValue.push(index)
+    indexValue.push(index);
     favorites.push(newColor);
-    this.setState({donutIndex: indexValue})
+    this.setState({ donutIndex: indexValue });
     this.setState({ favorites });
-    console.log(this.state.favorites)
+    console.log(this.state.favorites);
   };
 
   componentDidMount = () => {
@@ -67,9 +68,9 @@ export default class Home extends Component {
     return (
       <div className="App">
         <Container
+          savePalette={this.props.savePalette}
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
-
         />
       </div>
     );

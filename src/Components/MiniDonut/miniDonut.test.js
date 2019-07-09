@@ -1,12 +1,13 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import Home from './Home'
+import MiniDonut from './MiniDonut'
 
 
-describe('Home', () => {
+describe('MiniDonut', () => {
     let wrapper;
-    wrapper = shallow( <Home/> )
+    wrapper = shallow( <MiniDonut/> )
     it('should matchsnapshot', () => {
+        wrapper.instance().setState({fill: "Cyan"})
         expect(wrapper).toMatchSnapshot()
     });
     
