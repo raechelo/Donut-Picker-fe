@@ -69,6 +69,7 @@ export default class Home extends Component {
         <Container
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
+
         />
       </div>
     );
