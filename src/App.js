@@ -60,7 +60,7 @@ class App extends Component {
     console.log(this.state.favorites)
   };
 
-  toggleView = () => {
+  projectView = () => {
     let contents = <h1>Toggled!</h1>;
     this.setState({ contents });
     this.setState({ projects: !this.state.projects });
@@ -76,7 +76,7 @@ class App extends Component {
         <Container
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
-          toggleView={this.toggleView}
+          projectView={this.projectView}
         />
       </div>
     );

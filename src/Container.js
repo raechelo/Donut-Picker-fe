@@ -1,18 +1,43 @@
-import React from 'react'
+import React, { Component } from "react";
 
+export class Container extends Component {
+  constructor() {
+    super();
+    this.state = {
+      projectView: false
+    };
+  }
 
-export const Container = (props) => {
-    return(
-            <div className="container">
-            <div className="donuts-area">
-            {props.donuts} 
-            <button onClick={()=> props.freshPalette()}>GET COLORS</button>
-            <button onClick={() => props.toggleView()}> VIEW PROJECTS </button>
+  projectView = () => {
+    this.setState({ projectView: !this.state.projectView });
+    this.props.projectView();
+  };
 
-            </div>
-            
-            </div>
-    )
+  newPalettes = () => {
+    this.setState({ projectView: !this.state.projectView });
+    this.props.freshPalette()
+  }
+
+  validateContents = () => {
+    if (this.state.projectView) {
+      return "Hello World";
+    } else {
+      return this.props.donuts;
+    }
+  };
+
+  render() {
+    let contents = this.validateContents();
+    return (
+      <div className="container">
+        <div className="donuts-area">
+          {contents}
+          <button onClick={() => this.newPalettes()}>GET COLORS</button>
+          <button onClick={() => this.projectView()}> VIEW PROJECTS</button>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Container
+export default Container;
