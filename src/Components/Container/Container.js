@@ -12,7 +12,6 @@ export class Container extends Component {
 
   projectView = () => {
     this.setState({ projectView: !this.state.projectView });
-    this.props.projectView();
   };
 
   newPalettes = () => {
