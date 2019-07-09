@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Link } from "react-router-dom";
+
 export class Container extends Component {
   constructor() {
     super();
@@ -15,8 +17,8 @@ export class Container extends Component {
 
   newPalettes = () => {
     this.setState({ projectView: !this.state.projectView });
-    this.props.freshPalette()
-  }
+    this.props.freshPalette();
+  };
 
   validateContents = () => {
     if (this.state.projectView) {
@@ -33,7 +35,9 @@ export class Container extends Component {
         <div className="donuts-area">
           {contents}
           <button onClick={() => this.newPalettes()}>GET COLORS</button>
-          <button onClick={() => this.projectView()}> VIEW PROJECTS</button>
+          <Link exact to="/projects">
+            <button onClick={() => this.projectView()}> VIEW PROJECTS </button>
+          </Link>
         </div>
       </div>
     );
