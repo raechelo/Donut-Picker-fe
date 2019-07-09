@@ -11,17 +11,21 @@ export class Container extends Component {
   }
 
   projectView = () => {
-    this.setState({ projectView: !this.state.projectView });
+    this.setState({ projectView: true });
   };
 
   newPalettes = () => {
-    this.setState({ projectView: !this.state.projectView });
+    this.setState({ projectView: false });
     this.props.freshPalette();
+  };
+
+  savePalette = () => {
+    this.props.savePalette();
   };
 
   validateContents = () => {
     if (this.state.projectView) {
-      return "Hello World";
+      return <h1>Hello World</h1>;
     } else {
       return this.props.donuts;
     }
@@ -34,6 +38,8 @@ export class Container extends Component {
         <div className="donuts-area">
           {contents}
           <button onClick={() => this.newPalettes()}>GET COLORS</button>
+          <h3>Click any donut to lock color</h3>
+          <button onClick={() => this.savePalette()}>SAVE PALETTE</button>
           <Link exact to="/projects">
             <button onClick={() => this.projectView()}> VIEW PROJECTS </button>
           </Link>

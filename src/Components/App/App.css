@@ -18,9 +18,10 @@ svg{
   height: 15%;
 }
 .App{
-  background-image: url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80");
-  background-size: 100%;
+  background-image: url("https://images.unsplash.com/photo-1458819714733-e5ab3d536722?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80");
+  background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 .container{

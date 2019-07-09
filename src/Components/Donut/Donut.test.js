@@ -1,11 +1,11 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import Home from './Home'
+import Donut from './Donut'
 
 
-describe('Home', () => {
+describe('Donut', () => {
     let wrapper;
-    wrapper = shallow( <Home/> )
+    wrapper = shallow( <Donut/> )
     it('should matchsnapshot', () => {
         expect(wrapper).toMatchSnapshot()
     });

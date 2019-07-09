@@ -18,13 +18,17 @@ class App extends Component {
       .then(res => res.json())
       .then(projects => this.setState({projects}))
   }
+
+  savePalette = () => {
+    console.log("Clicked")
+  }
   
 
   render() {
     return (
       <section>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' render={() => <Home savePalette={this.savePalette} />}/>
           <Route exact path='/projects' render={() => <Projects projects={this.state.projects} /> } />
           <Route component={NoMatch} />
         </Switch>
