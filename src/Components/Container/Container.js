@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export const Container = (props) => {
@@ -7,7 +8,9 @@ export const Container = (props) => {
             <div className="donuts-area">
             {props.donuts} 
             <button onClick={()=> props.freshPalette()}>GET COLORS</button>
-            <button onClick={() => props.toggleView()}> VIEW PROJECTS </button>
+            <Link exact to='/projects'>
+                <button> VIEW PROJECTS </button>
+            </Link>
 
             </div>
             
