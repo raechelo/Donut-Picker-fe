@@ -11,7 +11,7 @@ export class Container extends Component {
 
     this.state = {
       name: "",
-      project: {}
+      project: {},
     };
   }
   newPalettes = () => {
@@ -22,6 +22,11 @@ export class Container extends Component {
   savePalette = () => {
     this.props.savePalette();
   };
+
+  handleChange = e => {
+    const { value } = e.target
+    this.setState({name: value})
+  }
 
   render() {
       const displayProjects = this.props.projects.map(p => <option>{p.name}</option>)
@@ -35,11 +40,10 @@ export class Container extends Component {
           <Dropdown
             // onChange={this.handleChange}
             options={displayProjects} 
-            // value={}
+            // value={this.state.name}
             placeholder='Please choose a project'
           />
-          {/* <label for="input">Name your project to save it to a project</label> */}
-          <input id="input" className="project-name-input" type="text" placeholder="My New Palette"/>
+          <input onChange={this.handleChange} id="input" className="project-name-input" type="text" placeholder="My New Palette"/>
           <button onClick={() => this.savePalette()}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> VIEW ALL PROJECTS </button>
