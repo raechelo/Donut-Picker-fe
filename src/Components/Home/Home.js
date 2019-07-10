@@ -9,7 +9,6 @@ export default class Home extends Component {
     this.state = {
       numbers: [0, 1, 2, 3, 4, 5],
       contents: [],
-      projects: false,
       favorites: [],
       donutIndex: []
     };
@@ -41,7 +40,7 @@ export default class Home extends Component {
     });
     this.setState({ contents });
   };
-
+  
   randomColorGen = () => {
     let fill = "#000000".replace(/0/g, () => {
       return (~~(Math.random() * 16)).toString(16);
@@ -57,8 +56,38 @@ export default class Home extends Component {
     favorites.push(newColor);
     this.setState({ donutIndex: indexValue });
     this.setState({ favorites });
-    console.log(this.state.favorites);
   };
+
+  savePalette = (palette, project) => {
+    let option = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: palette.name, 
+        project_id: project,
+        color_1: this.state.contents[0],
+        color_2: this.state.contents[1], 
+        color_3: this.state.contents[2], 
+        color_4: this.state.contents[3], 
+        color_5: this.state.contents[4], 
+        color_6: this.state.contents[5] 
+      })
+    };
+    fetch("http://localhost:3001/api/v1/palettes", option)
+    .then(response =>  response.json())
+    .then(result => console.log(result))
+}
+
+findProject = (palette, project) => {
+  let foundProject;
+  fetch(`http://localhost:3001/api/v1/projects/${project.name}`)
+  .then(response => response.json())
+  .then(result => foundProject = result)
+  this.savePalette(palette, foundProject)
+}
 
   componentDidMount = () => {
     this.freshPalette();
@@ -68,7 +97,7 @@ export default class Home extends Component {
     return (
       <div className="App">
         <Container
-          savePalette={this.props.savePalette}
+          savePalette={this.findProject}
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
         />
