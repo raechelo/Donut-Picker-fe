@@ -221,9 +221,18 @@ button:hover {
   width: 4rem;
 }
 
+.ReactModal__Content {
+  border: none;
+  background-color: magenta;
+}
+
 .ReactModal__Content--after-open {
-  width: 65%;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
+  border-image-slice: 1;
+  box-shadow: 2px 2px 2px #b292ea;
   height: 45%;
   margin: auto;
   text-align: center;
+  width: 65%;
 }
