@@ -90,6 +90,7 @@ button:hover {
 .Project {
   font-family: 'Open Sans', sans-serif;
   width: 33%;
+  padding: 15px;
 }
 
 .all-projects {
