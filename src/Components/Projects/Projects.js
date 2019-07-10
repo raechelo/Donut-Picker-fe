@@ -18,7 +18,7 @@ class Projects extends Component {
   }
 
   postProject = () => {
-
+    
   }
 
   render () {
@@ -32,8 +32,10 @@ class Projects extends Component {
         <section className="all-projects">
         {this.props.projects.length ? displayProjects : (<h4 className="project-alert">Please create a new project!</h4>)}
         </section>
-        <input type="text" onChange={this.handleChange} placeholder="My New Project" />
-        <button onClick={this.postProject} className="add-new-project"> + </button>
+        <div className="new-project">
+          <input type="text" onChange={this.handleChange} placeholder="My New Project" />
+          <button onClick={this.postProject} className="add-new-project"> + </button>
+        </div>
       </section>
     )
   }
