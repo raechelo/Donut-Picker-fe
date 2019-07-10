@@ -14,7 +14,6 @@ class Projects extends Component {
   }
 
   handleChange = e => {
-    console.log(e)
     const { value } = e.target
     this.setState({name: value})
   }

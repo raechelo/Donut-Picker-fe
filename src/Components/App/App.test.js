@@ -7,10 +7,10 @@ describe("App", () => {
   const mockFunction = jest.fn();
   let wrapper = shallow(<App/>);
   let mockGET;
-  let mockDAta
+  let mockData
 
   beforeEach(() => {
-    mockDAta = [{ name: "A test"},{ name: "another test"}];
+    mockData = [{ name: "A test"},{ name: "another test"}];
     window.fetch = jest.fn().mockImplementation(() =>
     Promise.resolve({
       ok: true,
