@@ -76,6 +76,7 @@ export default class Home extends Component {
           savePalette={this.props.savePalette}
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
+          projects={this.props.projects}
         />
       </div>
     );

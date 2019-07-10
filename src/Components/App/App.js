@@ -29,7 +29,7 @@ class App extends Component {
       <section className="App">
         <h1 className="App-name">Palette Picker</h1>
         <Switch>
-          <Route exact path='/' render={() => <Home savePalette={this.savePalette} />}/>
+          <Route exact path='/' render={() => <Home projects={this.state.projects} savePalette={this.savePalette} />}/>
           <Route exact path='/projects' render={() => <Projects projects={this.state.projects} /> } />
           <Route component={NoMatch} />
         </Switch>

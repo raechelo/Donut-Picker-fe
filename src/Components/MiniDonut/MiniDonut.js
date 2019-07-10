@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 
 export class miniDonut extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fill: ''
+    }
+  }
   render() {
     return (
       <div className="mini-donut donut">

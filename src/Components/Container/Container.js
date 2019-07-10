@@ -21,12 +21,18 @@ export class Container extends Component {
       <div className="container">
         <div className="donuts-area">
           {this.props.donuts}
-          <button onClick={() => this.newPalettes()}>GET COLORS</button>
-          <button onClick={() => this.savePalette()}>SAVE PALETTE</button>
-          <Link exact to="/projects" >
-            <button className="view-projects-btn"> VIEW PROJECTS </button>
-          </Link>
         </div>
+        <section className="btn-section">
+          <button onClick={() => this.newPalettes()}>GET NEW COLORS</button>
+          <select>
+              {/* {this.props.projects.map(p => <option>{p}</option>)} */}
+          </select>
+          <input type="text" placeholder="My New Palette"/>
+          <button onClick={() => this.savePalette()}>SAVE PALETTE TO PROJECT</button>
+          <Link exact to="/projects" >
+            <button className="view-projects-btn"> VIEW ALL PROJECTS </button>
+          </Link>
+        </section>
       </div>
     );
   }

@@ -37,6 +37,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 90vh;
 }
 
 .palette-donut {
@@ -101,4 +102,16 @@ button:hover {
   font-size: 1.5rem;
   margin: .5rem;
   text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "donut donut donut btn";
+}
+
+.btn-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
