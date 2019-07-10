@@ -50,16 +50,16 @@ export class Container extends Component {
           {this.props.donuts}
         </div>
         <section className="btn-section">
-          <button onClick={() => this.newPalettes()}>GET NEW COLORS</button>
+          <button onClick={() => this.newPalettes()}>Get New Colors</button>
           <Dropdown
             onChange={(e) => this.handleChange(e)}
             options={displayProjects} 
             placeholder='Please choose a project'
           />
-          <input onChange={(e) => this.savePaletteName(e)} id="input" className="project-name-input" type="text" placeholder="New Palette Name"/>
+          <input onChange={(e) => this.savePaletteName(e)} id="input" className="project-name-input palette-input" type="text" placeholder="New Palette Name"/>
           <button onClick={(e) => this.savePalette(e)}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
-            <button className="view-projects-btn"> VIEW ALL PROJECTS </button>
+            <button className="view-projects-btn"> View All Projects</button>
           </Link>
         </section>
       </div>
