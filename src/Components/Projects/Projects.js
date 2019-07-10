@@ -8,7 +8,8 @@ class Projects extends Component {
   constructor() {
     super();
     this.state = {
-      name: ''
+      name: '',
+      palettes: []
     }
   }
 
@@ -20,9 +21,18 @@ class Projects extends Component {
   postProject = () => {
     
   }
+  componentDidMount = () => {
+    this.gatherPalettes()
+  }
+
+  gatherPalettes =() => {
+    fetch("http://localhost:3001/api/v1/palettes")
+    .then(response => response.json())
+    .then(result => this.setState({palettes: result}))
+  }
 
   render () {
-    const displayProjects = this.props.projects.map(project => <Project key={shortid.generate()} className="indiv-project" {...project} />)
+    const displayProjects = this.props.projects.map(project => <Project palettes={this.state.palettes} key={shortid.generate()} className="indiv-project" {...project} />)
     return (
       <section className="Projects">
       <Link className="home-btn" to='/'>
