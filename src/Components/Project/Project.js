@@ -18,6 +18,11 @@ class Project extends Component {
   }
 
  render() {
+   
+let palettes = props.palettes.filter(palette => {
+  return palette.project_id === props.id
+}) 
+let listItems = palettes.map(palette => <li>{palette.name}</li>)
 
   return (
     <section>
@@ -33,8 +38,8 @@ class Project extends Component {
           <button onClick={this.handleCloseModal}>Close</button>
         </ReactModal>
     </section>
-  )
- }
+    )
+  }
 }
 
 export default Project;
