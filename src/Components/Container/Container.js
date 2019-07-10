@@ -41,7 +41,7 @@ export class Container extends Component {
             // value={this.state.name}
             placeholder='Please choose a project'
           />
-          <input onChange={this.handleChange} id="input" className="project-name-input" type="text" placeholder="New Palette Name"/>
+          <input className="palette-input" onChange={this.handleChange} id="input" className="project-name-input" type="text" placeholder="New Palette Name"/>
           <button onClick={() => this.savePalette()}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> VIEW ALL PROJECTS </button>

@@ -60,6 +60,7 @@ svg {
 
 button {
   display: block;
+  box-shadow: 2px 2px 2px #b292ea;
   font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -108,6 +109,22 @@ button:hover {
   text-align: center;
 }
 
+.add-new-project {
+  height: 4rem;
+}
+
+.add-new-project:hover {
+  color: white;
+  background-color: #70cddf;
+  transform: scale(1.1);
+}
+
+.project-alert {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
 .container {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -126,7 +143,7 @@ button:hover {
   font-size: 1rem;
 }
 
-.btn-section button, input {
+.btn-section button, .palette-input {
   height: 4rem;
   margin: 0 auto;
   width: 65%;
