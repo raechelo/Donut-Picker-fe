@@ -1,53 +1,104 @@
-
-*{
-  font-family: 'Neuton', serif;
-
-}
-
 .donut,
-svg{
-  width: 27%;
+svg {
+  width: 65%;
   display: inline;
   margin: 10px;
 }
-.donut{
+
+.donut {
   height: 45%
 }
 
-.mini-donit{
+.mini-donut {
   height: 15%;
 }
-.App{
-  background-image: url("https://images.pexels.com/photos/997719/pexels-photo-997719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-size: cover;
+
+.App {
+  background-image: linear-gradient(#ffffff63, #ffffff63), url("https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
+  background-size: 100%;
   background-repeat: no-repeat;
-  
+  height: 100vh;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.App-name {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .container{
-  display: grid;
-  grid-template-columns: 250px 1fr 250px;
+  /* display: grid; */
+  /* grid-template-columns: 250px 1fr 250px; */
 }
 
-.donuts-area{
-  grid-column: 2;
-  flex-flow: row;
-  margin-right: auto;
-  margin-left: auto;
+.donuts-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.palette-donut {
+  margin: auto;
+  text-align: center;
+  width: 33%;
+}
+
+.donut-fill {
+  font-size: 1.5rem;
+  margin: 0 auto;
 }
 
 
 button{
   display: block;
+  font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  height: 3rem;
   width: 280px;
-  border-radius: 15px;
-  border: 4.5px solid black;
-  font-size: 30px;
   font-weight: 700;
-
+  background-color: white;
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+  border-image-slice: 1;
+  border-radius: 15px;
 }
 
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #ffc8f9;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.project-icon {
+  margin: 0 .5rem;
+}
+
+.project-icon:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.Project {
+  font-family: 'Open Sans', sans-serif;
+  width: 33%;
+}
+
+.all-projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  margin: .5rem;
+  text-align: center;
+}

@@ -126,7 +126,7 @@ export class Donut extends Component {
             d="m429.953 92.144c2.63 0 5.21-1.07 7.07-2.93s2.93-4.44 2.93-7.07-1.07-5.21-2.93-7.07-4.44-2.93-7.07-2.93-5.21 1.07-7.07 2.93-2.93 4.44-2.93 7.07 1.07 5.21 2.93 7.07 4.44 2.93 7.07 2.93z"
           />
         </svg>
-        {/* <h6>{this.state.fill}</h6> */}
+        <h6 className="donut-fill"><i className="fas fa-unlock-alt"></i> {this.state.fill}</h6>
       </div>
     );
   }

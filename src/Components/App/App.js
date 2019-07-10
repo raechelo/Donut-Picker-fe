@@ -32,7 +32,8 @@ class App extends Component {
 
   render() {
     return (
-      <section>
+      <section className="App">
+        <h1 className="App-name">Palette Picker</h1>
         <Switch>
           <Route
             exact

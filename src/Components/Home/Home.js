@@ -18,7 +18,8 @@ export default class Home extends Component {
     let contents = this.state.numbers.map(index => {
       if (this.state.donutIndex.includes(index)) {
         return (
-          <Donut
+         <div className="palette-donut">
+            <Donut
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
             index={index}
@@ -26,15 +27,19 @@ export default class Home extends Component {
               this.state.favorites.find(donut => donut.index === index).color
             }
           />
+          <h4 className="donut-fill"><i className="fas fa-lock"></i>{index.fill}</h4>
+         </div>
         );
       } else {
         return (
-          <Donut
+          <div className="palette-donut">
+            <Donut
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
             index={index}
             fill={this.randomColorGen()}
           />
+          </div>
         );
       }
     });
@@ -95,7 +100,7 @@ findProject = (palette, project) => {
 
   render() {
     return (
-      <div className="App">
+      <div className="Home">
         <Container
           savePalette={this.findProject}
           donuts={this.state.contents}
