@@ -10,8 +10,7 @@ export class Container extends Component {
     super();
 
     this.state = {
-      name: "",
-      project: {},
+      name: ""
     };
   }
   newPalettes = () => {
@@ -29,7 +28,7 @@ export class Container extends Component {
   }
 
   render() {
-      const displayProjects = this.props.projects.map(p => <option>{p.name}</option>)
+      const displayProjects = this.props.projects.map(p => <option id={p.id}>{p.name}</option>)
       return (
       <div className="container">
         <div className="donuts-area">
@@ -38,12 +37,11 @@ export class Container extends Component {
         <section className="btn-section">
           <button onClick={() => this.newPalettes()}>GET NEW COLORS</button>
           <Dropdown
-            // onChange={this.handleChange}
             options={displayProjects} 
             // value={this.state.name}
             placeholder='Please choose a project'
           />
-          <input onChange={this.handleChange} id="input" className="project-name-input" type="text" placeholder="My New Palette"/>
+          <input onChange={this.handleChange} id="input" className="project-name-input" type="text" placeholder="New Palette Name"/>
           <button onClick={() => this.savePalette()}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> VIEW ALL PROJECTS </button>
