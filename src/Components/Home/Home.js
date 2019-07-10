@@ -28,7 +28,7 @@ export default class Home extends Component {
               this.state.favorites.find(donut => donut.index === index).color
             }
           />
-          <h4><i class="fas fa-lock"></i>{index.color}</h4>
+          <h4 className="donut-fill"><i className="fas fa-lock"></i>{index.fill}</h4>
          </div>
         );
       } else {
@@ -40,7 +40,6 @@ export default class Home extends Component {
             index={index}
             fill={this.randomColorGen()}
           />
-          <h4><i class="fas fa-unlock-alt"></i>{index.color}</h4>
           </div>
         );
       }
