@@ -4,13 +4,15 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import './Container.css';
 
+
 export class Container extends Component {
 
   constructor() {
     super();
 
     this.state = {
-      name: ""
+      project_id: "",
+      title: ""
     };
   }
   newPalettes = () => {
@@ -18,17 +20,30 @@ export class Container extends Component {
     this.props.freshPalette();
   };
 
-  savePalette = () => {
-    this.props.savePalette();
+  savePalette = (e) => {
+    e.preventDefault()
+    console.log(this.state)
+    let state = this.state;
+    if(state.project_id === "" || state.title === ""){
+      alert("Select a project folder to save this palette")
+    }else{
+      this.props.savePalette(state);
+    }
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
+    const { key } = e.value
+    this.setState({project_id: key})
+  }
+
+  savePaletteName = (e) => {
+    e.preventDefault()
     const { value } = e.target
-    this.setState({name: value})
+    this.setState({title: value})
   }
 
   render() {
-      const displayProjects = this.props.projects.map(p => <option id={p.id}>{p.name}</option>)
+      const displayProjects = this.props.projects.map(p => <option key={p.id}>{p.name}</option>)
       return (
       <div className="container">
         <div className="donuts-area">
@@ -37,12 +52,12 @@ export class Container extends Component {
         <section className="btn-section">
           <button onClick={() => this.newPalettes()}>Get New Colors</button>
           <Dropdown
+            onChange={(e) => this.handleChange(e)}
             options={displayProjects} 
-            // value={this.state.name}
             placeholder='Please choose a project'
           />
-          <input className="palette-input" onChange={this.handleChange} id="input" className="palette-name-input" type="text" placeholder="New Palette Name"/>
-          <button onClick={() => this.savePalette()}>Save Palette to Project</button>
+          <input onChange={(e) => this.savePaletteName(e)} id="input" className="project-name-input palette-input" type="text" placeholder="New Palette Name"/>
+          <button onClick={(e) => this.savePalette(e)}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> View All Projects</button>
           </Link>

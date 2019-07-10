@@ -10,7 +10,8 @@ export default class Home extends Component {
       numbers: [0, 1, 2, 3, 4, 5],
       contents: [],
       favorites: [],
-      donutIndex: []
+      donutIndex: [],
+      hex:[]
     };
   }
 
@@ -18,8 +19,9 @@ export default class Home extends Component {
     let contents = this.state.numbers.map(index => {
       if (this.state.donutIndex.includes(index)) {
         return (
-         <div className="palette-donut">
+         <div value ={index.fill}>
             <Donut
+            className="palette-donut"
             key={shortid.generate()}
             saveFavorites={this.saveFavorites}
             index={index}
@@ -50,6 +52,9 @@ export default class Home extends Component {
     let fill = "#000000".replace(/0/g, () => {
       return (~~(Math.random() * 16)).toString(16);
     });
+    let hex = this.state.contents;
+    hex.push(fill)
+    this.setState({hex})
     return fill;
   };
 
@@ -63,7 +68,7 @@ export default class Home extends Component {
     this.setState({ favorites });
   };
 
-  savePalette = (palette, project) => {
+  savePalette = (palette) => {
     let option = {
       method: 'POST',
       headers: {
@@ -71,14 +76,14 @@ export default class Home extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: palette.name, 
-        project_id: project,
-        color_1: this.state.contents[0],
-        color_2: this.state.contents[1], 
-        color_3: this.state.contents[2], 
-        color_4: this.state.contents[3], 
-        color_5: this.state.contents[4], 
-        color_6: this.state.contents[5] 
+        name: palette.title, 
+        project_id: palette.project_id,
+        color_1: this.state.hex[0],
+        color_2: this.state.hex[1], 
+        color_3: this.state.hex[2], 
+        color_4: this.state.hex[3], 
+        color_5: this.state.hex[4], 
+        color_6: this.state.hex[5] 
       })
     };
     fetch("http://localhost:3001/api/v1/palettes", option)
@@ -102,7 +107,7 @@ findProject = (palette, project) => {
     return (
       <div className="Home">
         <Container
-          savePalette={this.findProject}
+          savePalette={this.savePalette}
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
           projects={this.props.projects}
