@@ -1,0 +1,23 @@
+.Dropdown-root {
+ 
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+  width: 65%;
+}
+
+.Dropdown-control {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
+  border-image-slice: 1;
+  height: 4rem;
+}
+
+.Dropdown-menu {
+  border: 2px solid black;
+  color: white;
+  font-size: 1rem;
+}
+
+/* .Dropdown-option {
+
+} */

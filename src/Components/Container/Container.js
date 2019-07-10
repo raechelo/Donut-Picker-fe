@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import './Container.css';
 
 export class Container extends Component {
-  constructor() {
-    super();
-  }
 
   newPalettes = () => {
     this.setState({ projectView: false });
@@ -17,17 +16,21 @@ export class Container extends Component {
   };
 
   render() {
-    return (
+      const displayProjects = this.props.projects.map(p => <option>{p}</option>)
+      return (
       <div className="container">
         <div className="donuts-area">
           {this.props.donuts}
         </div>
         <section className="btn-section">
           <button onClick={() => this.newPalettes()}>GET NEW COLORS</button>
-          <select>
-              {/* {this.props.projects.map(p => <option>{p}</option>)} */}
-          </select>
-          <input type="text" placeholder="My New Palette"/>
+          <Dropdown
+            // onChange={this.handleChange}
+            options={displayProjects} 
+            // value={}
+            placeholder='Please choose a project'
+          />
+          <input className="project-name-input" type="text" placeholder="My New Palette"/>
           <button onClick={() => this.savePalette()}>SAVE PALETTE TO PROJECT</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> VIEW ALL PROJECTS </button>
