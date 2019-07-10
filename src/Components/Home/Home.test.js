@@ -10,4 +10,10 @@ describe('Home', () => {
         expect(wrapper).toMatchSnapshot()
     });
     
+    it("should call freshPalettes() on componentDidMount", () => {
+        let MockFn = jest.spyOn(wrapper.instance(), "freshPalette");
+        wrapper.instance().componentDidMount();
+        expect(MockFn).toHaveBeenCalled();
+      });
+    
 });

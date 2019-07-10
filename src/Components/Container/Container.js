@@ -6,6 +6,14 @@ import './Container.css';
 
 export class Container extends Component {
 
+  constructor() {
+    super();
+
+    this.state = {
+      name: "",
+      project: {}
+    };
+  }
   newPalettes = () => {
     this.setState({ projectView: false });
     this.props.freshPalette();

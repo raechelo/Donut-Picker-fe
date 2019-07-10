@@ -9,8 +9,11 @@ export class miniDonut extends Component {
   }
   render() {
     return (
-      <div className="mini-donut donut">
+      <div className="mini-donut donut" onClick={() =>
+        this.props.saveFavorites(this.state.fill, this.props.index)
+      }>
         <svg
+        
           id="Capa_1"
           enableBackground="new 0 0 512.094 512.094"
           viewBox="0 0 512.094 512.094"
@@ -29,9 +32,6 @@ export class miniDonut extends Component {
             fill="#ffcb7c"
           />
           <circle
-            onClick={() =>
-              this.props.saveFavorites(this.state.fill, this.props.index)
-            }
             id="XMLID_959_"
             cx="256.003"
             cy="256.094"
