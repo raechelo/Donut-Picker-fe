@@ -24,7 +24,7 @@ export class Container extends Component {
   };
 
   render() {
-      const displayProjects = this.props.projects.map(p => <option>{p}</option>)
+      const displayProjects = this.props.projects.map(p => <option>{p.name}</option>)
       return (
       <div className="container">
         <div className="donuts-area">
