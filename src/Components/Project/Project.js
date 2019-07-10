@@ -1,13 +1,14 @@
 import React from 'react'
+const shortid = require("shortid");
+
 
 export default function Project(props) {
-let palettes = props.palettes.filter(palette => {
+
+  let palettes = props.palettes.filter(palette => {
   return palette.project_id === props.id
 }) 
-let listItems = palettes.map(palette => <li>{palette.name}</li>)
+let listItems = palettes.map(palette => <li key={shortid.generate()}>{palette.name}</li>)
 
-
-console.log(palettes)
 return (
     <article className="Project">
       <h4 className="Project-name">{props.name}</h4>
