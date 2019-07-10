@@ -32,11 +32,6 @@ svg {
   text-transform: capitalize;
 }
 
-.container{
-  /* display: grid; */
-  /* grid-template-columns: 250px 1fr 250px; */
-}
-
 .donuts-area {
   font-family: 'Open Sans', sans-serif;
   display: flex;
@@ -60,6 +55,7 @@ svg {
 
 button {
   display: block;
+  box-shadow: 2px 2px 2px #b292ea;
   font-size: 1.5rem;
   margin-left: auto;
   margin-right: auto;
@@ -68,7 +64,7 @@ button {
   width: 280px;
   font-weight: 700;
   background-color: white;
-  border: 5px solid transparent;
+  border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
 }
@@ -108,6 +104,57 @@ button:hover {
   text-align: center;
 }
 
+.add-new-project {
+  display: inline;
+  /* height: 4rem; */
+}
+
+.add-new-project:hover {
+  color: white;
+  background-color: #70cddf;
+  transform: scale(1.1);
+}
+
+.project-alert {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.new-project {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.new-project input {
+  border: 3px solid transparent;
+  border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
+  border-image-slice: 1;
+  box-shadow: 2px 2px 2px #b292ea;
+  font-size: 1.5rem;
+  height: 4rem;
+  padding-left: 5px;
+  width: 280px;
+}
+
+.new-project button {
+  background: transparent;
+  border-image: none;
+  box-shadow: none;
+  font-size: 2rem;
+  left: 55%;
+  position: absolute;
+  width: 4rem;
+}
+
+.new-project button:hover {
+  background: transparent;
+  color: black;
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
 .container {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -126,19 +173,24 @@ button:hover {
   font-size: 1rem;
 }
 
-.btn-section button, input {
+.btn-section button, .palette-input {
   height: 4rem;
   margin: 0 auto;
   width: 65%;
 }
 
-.project-name-input {
-  border: 5px solid transparent;
+.palette-name-input {
+  border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
+  box-shadow: 2px 2px 2px #b292ea;
   font-size: 1rem;
+  font-weight: bold;
+  height: 4rem;
+  width: 65%;
   margin: 0 auto;
   padding-left: 5px;
+  text-align: center;
 }
 
 .NoMatch {
@@ -155,4 +207,15 @@ button:hover {
 .fa-unlock-alt:hover {
   color: #8d8d8d;
   cursor: pointer;
+}
+
+.home-btn {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+}
+
+.home-btn button {
+  font-size: 1rem;
+  width: 4rem;
 }
