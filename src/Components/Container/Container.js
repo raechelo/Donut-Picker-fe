@@ -60,7 +60,7 @@ export class Container extends Component {
             placeholder='Please choose a project'
           />
           <input onChange={(e) => this.savePaletteName(e)} id="input" className="project-name-input palette-input" type="text" placeholder="New Palette Name"/>
-          <button onClick={(e) => this.savePalette(e)}>SAVE PALETTE TO PROJECT</button>
+          <button onClick={(e) => this.savePalette(e)}>Save Palette to Project</button>
           <Link exact to="/projects" >
             <button className="view-projects-btn"> View All Projects</button>
           </Link>
