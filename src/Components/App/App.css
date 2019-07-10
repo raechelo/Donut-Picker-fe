@@ -151,3 +151,8 @@ button:hover {
   font-size: 2rem;
   margin: auto;
 }
+
+.fa-unlock-alt:hover {
+  color: #8d8d8d;
+  cursor: pointer;
+}

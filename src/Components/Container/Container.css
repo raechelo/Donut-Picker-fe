@@ -1,5 +1,5 @@
 .Dropdown-root {
- 
+  font-weight: bold; 
   font-family: 'Open Sans', sans-serif;
   margin: 0 auto;
   width: 65%;
@@ -21,3 +21,8 @@
 /* .Dropdown-option {
 
 } */
+
+.Dropdown-placeholder {
+  font-weight: bold;
+  text-align: center;
+}
