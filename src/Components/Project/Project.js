@@ -19,8 +19,8 @@ class Project extends Component {
 
  render() {
    
-let palettes = props.palettes.filter(palette => {
-  return palette.project_id === props.id
+let palettes = this.props.palettes.filter(palette => {
+  return palette.project_id === this.props.id
 }) 
 let listItems = palettes.map(palette => <li>{palette.name}</li>)
 
