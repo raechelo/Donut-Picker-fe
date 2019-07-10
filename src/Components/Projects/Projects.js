@@ -1,9 +1,11 @@
 import React from 'react';
 import Project from '../Project/Project';
 import { Link } from 'react-router-dom';
+const shortid = require("shortid");
+
 
 export default function Projects({ projects }) {
-  const displayProjects = projects.map(project => <Project className="indiv-project" {...project} />)
+  const displayProjects = projects.map(project => <Project key={shortid.generate()} className="indiv-project" {...project} />)
   return (
     <section className="Projects">
     <Link to='/'>
