@@ -105,6 +105,7 @@ findProject = (palette, project) => {
           savePalette={this.findProject}
           donuts={this.state.contents}
           freshPalette={this.freshPalette}
+          projects={this.props.projects}
         />
       </div>
     );
