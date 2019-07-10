@@ -32,11 +32,6 @@ svg {
   text-transform: capitalize;
 }
 
-.container{
-  /* display: grid; */
-  /* grid-template-columns: 250px 1fr 250px; */
-}
-
 .donuts-area {
   font-family: 'Open Sans', sans-serif;
   display: flex;
@@ -184,11 +179,15 @@ button:hover {
   width: 65%;
 }
 
-.project-name-input {
+.palette-name-input {
   border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
+  box-shadow: 2px 2px 2px #b292ea;
   font-size: 1rem;
+  font-weight: bold;
+  height: 4rem;
+  width: 65%;
   margin: 0 auto;
   padding-left: 5px;
   text-align: center;
