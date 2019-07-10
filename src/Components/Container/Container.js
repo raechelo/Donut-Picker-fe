@@ -49,7 +49,7 @@ export class Container extends Component {
       <div className="container">
         <div className="donuts-area">{this.props.donuts}</div>
         <section className="btn-section">
-          <button onClick={() => this.newPalettes()}>Get New Colors</button>
+          <button id="palette-btn" onClick={() => this.newPalettes()}>Get New Colors</button>
           <Dropdown
             onChange={(e) => this.handleChange(e)}
             options={displayProjects} 
