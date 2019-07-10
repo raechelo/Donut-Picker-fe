@@ -25,8 +25,8 @@ class Projects extends Component {
     const displayProjects = this.props.projects.map(project => <Project key={shortid.generate()} className="indiv-project" {...project} />)
     return (
       <section className="Projects">
-      <Link to='/'>
-      <button><i class="fas fa-long-arrow-alt-left"></i> Home</button>
+      <Link className="home-btn" to='/'>
+        <button><i class="fas fa-long-arrow-alt-left"></i> Home</button>
       </Link>
       <h4 className="project-header">My Projects</h4>
         <section className="all-projects">
