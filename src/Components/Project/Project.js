@@ -24,10 +24,20 @@ class Project extends Component {
     this.setState({ showModal: false });
   }
 
-  handleChange = (e) => {
-    const { value } = e.target;
-    const { name } = this.state.currentPalette
-    name = value
+  deletePalette = (id) => {
+    let option = {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id
+      })
+    };
+    fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    .then(response =>  response.json())
+    .then(result => console.log(result))
   }
 
   render() {
@@ -55,7 +65,7 @@ class Project extends Component {
         <div className="edit-project-name-modal">
           <h2 className="mini-palette-name-modal">Edit {this.state.currentPalette.name}</h2>
           <input type="text" className="project-name-input-modal" onChange={this.handleChange} />
-          <button onClick={this.handleCloseModal} className="delete-modal">Delete Project</button>
+          <button onClick={() => this.deletePalette(this.state.currentPalette.id)} className="delete-modal">Delete Palette</button>
         </div>
         <div className="mini-donuts-modal">
           <MiniDonut fill={this.state.currentPalette.color_1} />
