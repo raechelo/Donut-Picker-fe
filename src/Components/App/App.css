@@ -24,6 +24,7 @@ svg {
   background-repeat: no-repeat;
   height: 100vh;
   font-family: 'Mountains of Christmas', cursive;
+  overflow: scroll;
 }
 
 .App-name {
@@ -97,7 +98,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   flex-flow: row;
- 
 }
 
 .all-projects {
@@ -151,9 +151,9 @@ button:hover {
   border-image: none;
   box-shadow: none;
   font-size: 2rem;
-  left: 55%;
-  position: absolute;
-  width: 4rem;
+  left: -3%;
+  position: relative;
+  width: 4rem
 }
 
 .new-project button:hover {
@@ -185,6 +185,14 @@ button:hover {
   height: 4rem;
   margin: 0 auto;
   width: 65%;
+}
+
+.Project-name {
+  display: inline;
+}
+
+.project-icon {
+  margin: 0 .5rem;
 }
 
 .project-name-input {
@@ -228,10 +236,66 @@ button:hover {
   width: 4rem;
 }
 
+.mini-donut {
+  margin: 0;
+  width: 25%;
+}
 
-.ReactModal__Content {
-  border: none;
-  background-color: magenta;
+.mini-donut svg {
+  margin: 0;
+}
+
+.mini-palette-name {
+  max-width: 5rem;
+  font-size: 1rem;
+  min-width: 5rem;
+}
+
+.mini-palette-name-modal {
+  display: block;
+  text-align: center;
+}
+
+.mini-donut-hex {
+  margin: 0 auto;
+}
+
+.mini-donuts-modal {
+  display: flex;
+  margin: 1rem;
+}
+
+.edit-palette {
+  position: relative;
+  top: 35%;
+  right: 3%;
+}
+
+.project-name-input-modal {
+  height: 2rem;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 1rem auto;
+}
+
+.edit-project-name-modal {
+  text-align: center;
+}
+
+.update-palette-modal {
+  display: inline;
+  font-size: 1rem;
+  height: 3rem;
+  margin: 0 .5rem;
+  width: 8rem;
+}
+
+.delete-modal {
+  font-size: 1rem;
+  position: relative;
+  left: 35%;
+  top: -5rem;
+  width: 6rem;
 }
 
 .ReactModal__Content--after-open {
@@ -239,7 +303,8 @@ button:hover {
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
   box-shadow: 2px 2px 2px #b292ea;
-  height: 45%;
+  font-family: 'Open Sans', sans-serif;
+  height: 50%;
   margin: auto;
   text-align: center;
   width: 65%;

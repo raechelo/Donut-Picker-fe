@@ -20,9 +20,14 @@ With Palette-Picker, a user can create new projects with unique names and create
 
 Wireframe
 
-[![1.jpg](https://i.postimg.cc/28D7Kv45/1.jpg)](https://postimg.cc/pysj9mcN)
+![Get Colors(1)](https://user-images.githubusercontent.com/39016273/61022609-db6db280-a363-11e9-8382-206dcd696d7c.jpg)
 
 Final Product
+
+![2019-07-10 22 34 00](https://user-images.githubusercontent.com/39016273/61022472-24713700-a363-11e9-8d77-dd17658da690.gif)
+
+![2019-07-10 22 35 35](https://user-images.githubusercontent.com/39016273/61022489-3fdc4200-a363-11e9-9eab-817e10a02c6a.gif)
+
 
 ## Learning Goals
 
@@ -31,3 +36,6 @@ Palette Picker is a project designed for developers to use multiple environments
 Additionally, this project was intended for students to really dive deep into utilizing issues, templates, and code reviews to effectively collaborate on a project and to mimic a real-world environment. (Another environment! 💪)
 
 ## Contributors
+[Raechel Odom](github.com/raechelo)
+   
+[Rachael Drennan](github.com/rdren0)
