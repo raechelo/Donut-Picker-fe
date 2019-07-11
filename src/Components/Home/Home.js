@@ -28,7 +28,7 @@ export default class Home extends Component {
               this.state.locked.find(donut => donut.index === index).color
             }
           />
-          <h4 className="donut-fill"><i className="fas fa-lock"></i>{index.fill}</h4>
+          <h4 className="donut-fill">{index.fill}</h4>
          </div>
         );
       } else {
