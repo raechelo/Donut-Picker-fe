@@ -4,11 +4,6 @@ import Home from './Home'
 
 
 describe('Home', () => {
-    let mockData = [
-        { name: "A test" },
-        { name: "Another test"
-        }
-      ];
     let wrapper = shallow( <Home/> )
     it('should matchsnapshot', () => {
         expect(wrapper).toMatchSnapshot()
@@ -18,9 +13,6 @@ describe('Home', () => {
         let MockFn = jest.spyOn(wrapper.instance(), "freshPalette");
         wrapper.instance().componentDidMount();
         expect(MockFn).toHaveBeenCalled();
-      });
-      it('should update state when saving Favorites', () => {
-          
       });
       
     
