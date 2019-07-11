@@ -161,7 +161,7 @@ let displayProjectModal = (<div className="project-section-modal">
         <div className="edit-project-name-modal">
           <h2 className="mini-palette-name-modal">Edit {this.state.currentProject.name}</h2>
           <input type="text" className="project-name-input-modal" onChange={this.handleProjectChange} value={this.state.currentProject.name} />
-          <button onClick={() => this.deleteProject(this.state.currentProject.id)} className="delete-modal">Delete Project</button>
+          {/* <button onClick={() => this.deleteProject(this.state.currentProject.id)} className="delete-modal">Delete Project</button> */}
         </div>
         <button className="update-palette-modal" onClick={this.handleCloseModal}>Close & Don't Save</button>
         <button className="update-palette-modal" onClick={() => this.updateProject(this.state.currentProject.id)}>Save Changes</button>
