@@ -14,18 +14,22 @@
 }
 
 .Dropdown-control:hover {
+  border: 3px solid transparent;
+  border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   cursor: pointer;
 }
 
 .Dropdown-menu {
-  border: 2px solid black;
-  color: white;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
+  border-image-slice: 1;
   font-size: 1rem;
+  font-weight: bold;
 }
 
-/* .Dropdown-option {
-
-} */
+.Dropdown-option:hover {
+  background-image: linear-gradient(to bottom right, hsla(262, 68%, 75%, 0.35) 0%, hsla(190, 63%, 66%, 0.35) 25%, hsla(315, 65%, 77%, 0.35) 50%, hsla(17, 79%, 91%, 0.35) 75%, hsla(186, 48%, 62%, 0.35) 100%);
+}
 
 .Dropdown-placeholder {
   font-weight: bold;

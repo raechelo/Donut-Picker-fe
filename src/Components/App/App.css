@@ -94,10 +94,16 @@ button:hover {
   padding: 15px;
 }
 
+.Project-name {
+  border-bottom: 2px solid black;
+  margin: .5rem 0;
+}
+
 .display-donuts, .mini-donut-section {
   display: flex;
   justify-content: space-between;
   flex-flow: row;
+  margin-top: 0.3rem;
 }
 
 .all-projects {
@@ -247,7 +253,7 @@ button:hover {
 
 .mini-palette-name {
   max-width: 5rem;
-  font-size: 1rem;
+  font-size: .8rem;
   min-width: 5rem;
 }
 

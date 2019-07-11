@@ -3,7 +3,6 @@ import ReactModal from 'react-modal';
 import MiniDonut from  '../MiniDonut/MiniDonut';
 const shortid = require("shortid");
 
-
 class Project extends Component {
   constructor() {
     super();
@@ -119,7 +118,6 @@ class Project extends Component {
   }
 
   render() {
-
   let palettes = this.props.palettes.filter(palette => {
     return palette.project_id === this.props.id
   })
