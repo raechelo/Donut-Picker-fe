@@ -10,7 +10,7 @@ describe('Projects', () => {
     it('should matchsnapshot', () => {
         expect(wrapper).toMatchSnapshot()
     });
-    it('should ', () => {
+    it('should update state on handleChange ', () => {
         wrapper.setState({ name: 'test' });
         wrapper.instance().handleChange({target:{value:"diff"}})
         expect(wrapper.state('name')).toEqual("diff")
