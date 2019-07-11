@@ -24,6 +24,7 @@ svg {
   background-repeat: no-repeat;
   height: 100vh;
   font-family: 'Mountains of Christmas', cursive;
+  overflow: scroll;
 }
 
 .App-name {
@@ -151,9 +152,9 @@ button:hover {
   border-image: none;
   box-shadow: none;
   font-size: 2rem;
-  left: 55%;
-  position: absolute;
-  width: 4rem;
+  left: -3%;
+  position: relative;
+  width: 4rem
 }
 
 .new-project button:hover {
@@ -185,6 +186,14 @@ button:hover {
   height: 4rem;
   margin: 0 auto;
   width: 65%;
+}
+
+.Project-name {
+  display: inline;
+}
+
+.project-icon {
+  margin: 0 .5rem;
 }
 
 .project-name-input {
@@ -228,10 +237,29 @@ button:hover {
   width: 4rem;
 }
 
+.mini-donut {
+  margin: o;
+  width: 25%;
+}
 
-.ReactModal__Content {
-  border: none;
-  background-color: magenta;
+.mini-donut svg {
+  margin: 0;
+}
+
+.mini-palette-name {
+  max-width: 5rem;
+  font-size: 1rem;
+  min-width: 5rem;
+}
+
+.mini-donut-hex {
+  margin: 0 auto;
+}
+
+.edit-palette {
+  position: relative;
+  top: 35%;
+  right: 3%;
 }
 
 .ReactModal__Content--after-open {
