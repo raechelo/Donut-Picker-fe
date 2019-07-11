@@ -4,8 +4,12 @@ import Home from './Home'
 
 
 describe('Home', () => {
-    let wrapper;
-    wrapper = shallow( <Home/> )
+    let mockData = [
+        { name: "A test" },
+        { name: "Another test"
+        }
+      ];
+    let wrapper = shallow( <Home/> )
     it('should matchsnapshot', () => {
         expect(wrapper).toMatchSnapshot()
     });
@@ -15,5 +19,9 @@ describe('Home', () => {
         wrapper.instance().componentDidMount();
         expect(MockFn).toHaveBeenCalled();
       });
+      it('should update state when saving Favorites', () => {
+          
+      });
+      
     
 });

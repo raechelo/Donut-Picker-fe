@@ -9,7 +9,7 @@ export default class Home extends Component {
     this.state = {
       numbers: [0, 1, 2, 3, 4, 5],
       contents: [],
-      favorites: [],
+      locked: [],
       donutIndex: [],
       hex:[]
     };
@@ -19,14 +19,13 @@ export default class Home extends Component {
     let contents = this.state.numbers.map(index => {
       if (this.state.donutIndex.includes(index)) {
         return (
-         <div value ={index.fill}>
+         <div value ={index.fill} className="palette-donut">
             <Donut
-            className="palette-donut"
             key={shortid.generate()}
-            saveFavorites={this.saveFavorites}
+            lockDonut={this.lockDonut}
             index={index}
             fill={
-              this.state.favorites.find(donut => donut.index === index).color
+              this.state.locked.find(donut => donut.index === index).color
             }
           />
           <h4 className="donut-fill"><i className="fas fa-lock"></i>{index.fill}</h4>
@@ -37,7 +36,7 @@ export default class Home extends Component {
           <div className="palette-donut">
             <Donut
             key={shortid.generate()}
-            saveFavorites={this.saveFavorites}
+            lockDonut={this.lockDonut}
             index={index}
             fill={this.randomColorGen()}
           />
@@ -58,14 +57,14 @@ export default class Home extends Component {
     return fill;
   };
 
-  saveFavorites = (color, index) => {
+  lockDonut = (color, index) => {
     let newColor = { color, index };
-    let favorites = this.state.favorites;
+    let locked = this.state.locked;
     let indexValue = this.state.donutIndex;
     indexValue.push(index);
-    favorites.push(newColor);
+    locked.push(newColor);
     this.setState({ donutIndex: indexValue });
-    this.setState({ favorites });
+    this.setState({ locked });
   };
 
   savePalette = (palette) => {
@@ -89,14 +88,6 @@ export default class Home extends Component {
     fetch("http://localhost:3001/api/v1/palettes", option)
     .then(response =>  response.json())
     .then(result => console.log(result))
-}
-
-findProject = (palette, project) => {
-  let foundProject;
-  fetch(`http://localhost:3001/api/v1/projects/${project.name}`)
-  .then(response => response.json())
-  .then(result => foundProject = result)
-  this.savePalette(palette, foundProject)
 }
 
   componentDidMount = () => {

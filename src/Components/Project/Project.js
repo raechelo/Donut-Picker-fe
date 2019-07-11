@@ -18,10 +18,7 @@ class Project extends Component {
     this.setState({ showModal: false });
   }
 
-  let palettes = props.palettes.filter(palette => {
-  return palette.project_id === props.id
-}) 
-let listItems = palettes.map(palette => <li key={shortid.generate()}>{palette.name}</li>)
+
 
 render() {
    
@@ -29,7 +26,7 @@ render() {
     return palette.project_id === this.props.id
   })
 
-  // let listItems = palettes.map(palette => <h5>{palette.name}</h5>)
+  let listItems = palettes.map(palette => <h5>{palette.name}</h5>)
 
   let displayDonuts = palettes.map((palette, i) => {
     if (palette[`color_${i+1}`][0] === '#') {
@@ -63,6 +60,7 @@ render() {
     </section>
     )
   }
+}
 
 
 export default Project;

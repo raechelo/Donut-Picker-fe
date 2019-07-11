@@ -17,7 +17,7 @@ export class Donut extends Component {
   render() {
     return (
       <div className="donut" onClick={() =>
-        this.props.saveFavorites(this.state.fill, this.props.index)}>
+        this.props.lockDonut(this.state.fill, this.props.index)}>
         <svg
           id="Capa_1"
           enableBackground="new 0 0 512.094 512.094"

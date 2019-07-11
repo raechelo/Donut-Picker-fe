@@ -25,7 +25,11 @@ export class Container extends Component {
       alert("Select a project folder to save this palette");
     } else {
       this.props.savePalette(state);
+      alert('Palette saved!')
     }
+    this.setState({ project_name: "", title: "" });
+
+
   };
 
 
@@ -64,7 +68,6 @@ export class Container extends Component {
             placeholder="New Palette Name"
 
           />
-          <input onChange={(e) => this.savePaletteName(e)} id="input" className="project-name-input palette-input" type="text" placeholder="New Palette Name"/>
           <button id="save-btn" onClick={(e) => this.savePalette(e)}>Save Palette to Project</button>
           <Link exact to="/projects" >
 
