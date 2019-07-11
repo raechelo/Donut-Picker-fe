@@ -88,10 +88,13 @@ button:hover {
 }
 
 .Project {
-  display: inline;
   font-family: 'Open Sans', sans-serif;
-  width: 33%;
   padding: 15px;
+}
+
+.display-donuts, .mini-donut-section {
+  display: flex;
+  justify-content: space-between;
 }
 
 .all-projects {
@@ -181,7 +184,7 @@ button:hover {
   width: 65%;
 }
 
-.palette-name-input {
+.project-name-input {
   border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
@@ -220,6 +223,10 @@ button:hover {
 .home-btn button {
   font-size: 1rem;
   width: 4rem;
+}
+
+.mini-donut {
+  width: 25%;
 }
 
 .ReactModal__Content {
