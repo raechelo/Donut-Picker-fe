@@ -45,7 +45,7 @@ class Projects extends Component {
   }
 
   render () {
-    const displayProjects = this.props.projects.map(project => <Project palettes={this.state.palettes} key={shortid.generate()} className="indiv-project" {...project} />)
+    const displayProjects = this.props.projects.map(project => <Project projects={this.props.projects} palettes={this.state.palettes} key={shortid.generate()} className="indiv-project" {...project} />)
     return (
       <section className="Projects">
       <Link className="home-btn" to='/'>
