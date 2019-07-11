@@ -28,7 +28,7 @@ const miniDonut = ({fill}) => {
           id="XMLID_959_"
           cx="256.003"
           cy="256.094"
-          fill="#d6ccc5"
+          fill="#ece5f9"
           r="88"
         />
         <path
