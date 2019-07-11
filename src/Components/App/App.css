@@ -98,7 +98,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   flex-flow: row;
- 
 }
 
 .all-projects {
@@ -238,7 +237,7 @@ button:hover {
 }
 
 .mini-donut {
-  margin: o;
+  margin: 0;
   width: 25%;
 }
 
@@ -252,8 +251,18 @@ button:hover {
   min-width: 5rem;
 }
 
+.mini-palette-name-modal {
+  display: block;
+  text-align: center;
+}
+
 .mini-donut-hex {
   margin: 0 auto;
+}
+
+.mini-donuts-modal {
+  display: flex;
+  margin: 1rem;
 }
 
 .edit-palette {
@@ -262,12 +271,40 @@ button:hover {
   right: 3%;
 }
 
+.project-name-input-modal {
+  height: 2rem;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 1rem auto;
+}
+
+.edit-project-name-modal {
+  text-align: center;
+}
+
+.update-palette-modal {
+  display: inline;
+  font-size: 1rem;
+  height: 3rem;
+  margin: 0 .5rem;
+  width: 8rem;
+}
+
+.delete-modal {
+  font-size: 1rem;
+  position: relative;
+  left: 35%;
+  top: -5rem;
+  width: 6rem;
+}
+
 .ReactModal__Content--after-open {
   border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
   border-image-slice: 1;
   box-shadow: 2px 2px 2px #b292ea;
-  height: 45%;
+  font-family: 'Open Sans', sans-serif;
+  height: 50%;
   margin: auto;
   text-align: center;
   width: 65%;

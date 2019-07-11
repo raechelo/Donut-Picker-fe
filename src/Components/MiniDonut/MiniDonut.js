@@ -2,11 +2,11 @@ import React from "react";
 
 const miniDonut = ({fill}) => {
   return (
-    <div className="mini-donut donut" onClick={() =>
-      this.props.saveFavorites(fill, this.props.index)
-    }>
+    <div className="mini-donut donut" 
+    // onClick={() =>
+    //   this.props.saveFavorites(fill, this.props.index)}
+    >
       <svg
-      
         id="Capa_1"
         enableBackground="new 0 0 512.094 512.094"
         viewBox="0 0 512.094 512.094"
