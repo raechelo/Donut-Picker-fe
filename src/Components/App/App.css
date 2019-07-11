@@ -98,7 +98,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   flex-flow: row;
- 
 }
 
 .all-projects {
@@ -281,6 +280,14 @@ button:hover {
 
 .edit-project-name-modal {
   text-align: center;
+}
+
+.update-palette-modal {
+  display: inline;
+  font-size: 1rem;
+  height: 3rem;
+  margin: 0 .5rem;
+  width: 8rem;
 }
 
 .delete-modal {

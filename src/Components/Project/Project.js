@@ -9,7 +9,8 @@ class Project extends Component {
     super();
     this.state = {
       showModal: false,
-      currentPalette: {}
+      currentPalette: {},
+      name: ''
     }
   }
 
@@ -22,6 +23,26 @@ class Project extends Component {
   
   handleCloseModal = () => {
     this.setState({ showModal: false });
+  }
+
+  handleChange = (e) => {
+    const { value } = e.target;
+    const newState = {...this.state.currentPalette, name:value}
+    this.setState({ name: value, currentPalette: newState })
+  }
+
+  updatePalette = (id) => {
+    let option = {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({...this.state.currentPalette})
+    };
+    fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    .then(response =>  response.json())
+    .then(result => console.log(result))
   }
 
   deletePalette = (id) => {
@@ -64,7 +85,7 @@ class Project extends Component {
   let displayModal = (<div className="mini-donut-section-modal">
         <div className="edit-project-name-modal">
           <h2 className="mini-palette-name-modal">Edit {this.state.currentPalette.name}</h2>
-          <input type="text" className="project-name-input-modal" onChange={this.handleChange} />
+          <input type="text" className="project-name-input-modal" onChange={this.handleChange} value={this.state.name} />
           <button onClick={() => this.deletePalette(this.state.currentPalette.id)} className="delete-modal">Delete Palette</button>
         </div>
         <div className="mini-donuts-modal">
@@ -75,7 +96,8 @@ class Project extends Component {
           <MiniDonut fill={this.state.currentPalette.color_5} />
           <MiniDonut fill={this.state.currentPalette.color_6} />
         </div>
-        <button onClick={this.handleCloseModal}>Close</button>
+        <button className="update-palette-modal" onClick={this.handleCloseModal}>Close & Don't Save</button>
+        <button className="update-palette-modal" onClick={() => this.updatePalette(this.state.currentPalette.id)}>Save Changes</button>
       </div>)
 
   return (
