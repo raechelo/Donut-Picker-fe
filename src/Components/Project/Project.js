@@ -38,7 +38,15 @@ class Project extends Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({...this.state.currentPalette})
+      body: JSON.stringify({
+        name: this.state.currentPalette.title, 
+        color_1: this.state.currentPalette.color_1,
+        color_2: this.state.currentPalette.color_2,
+        color_3: this.state.currentPalette.color_3,
+        color_4: this.state.currentPalette.color_4,
+        color_5: this.state.currentPalette.color_5,
+        color_6: this.state.currentPalette.color_6
+      })
     };
     fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
     .then(response =>  response.json())
