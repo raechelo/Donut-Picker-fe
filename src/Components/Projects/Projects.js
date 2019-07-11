@@ -49,7 +49,7 @@ class Projects extends Component {
     return (
       <section className="Projects">
       <Link className="home-btn" to='/'>
-        <button><i class="fas fa-long-arrow-alt-left"></i> Home</button>
+        <button><i className="fas fa-long-arrow-alt-left"></i> Home</button>
       </Link>
       <h4 className="project-header">My Projects</h4>
       <div className="new-project">
