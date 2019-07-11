@@ -19,6 +19,9 @@ describe('Home', () => {
         wrapper.instance().componentDidMount();
         expect(MockFn).toHaveBeenCalled();
       });
+      it('should update state when saving Favorites', () => {
+          
+      });
       
     
 });
