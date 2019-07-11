@@ -29,7 +29,7 @@ class Projects extends Component {
         name: this.state.name
       })
     }
-    fetch("http://localhost:3001/api/v1/projects", option)
+    fetch("https://donut-picker-be.herokuapp.com/api/v1/projects", option)
     .then(response => response.json())
     .then(result => console.log(result))
   }
@@ -39,7 +39,7 @@ class Projects extends Component {
   }
 
   gatherPalettes =() => {
-    fetch("http://localhost:3001/api/v1/palettes")
+    fetch("https://donut-picker-be.herokuapp.com/api/v1/palettes")
     .then(response => response.json())
     .then(result => this.setState({palettes: result}))
   }
