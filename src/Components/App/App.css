@@ -280,6 +280,7 @@ button:hover {
 
 .edit-project-name-modal {
   text-align: center;
+  height: 20vh;
 }
 
 .update-palette-modal {
@@ -304,7 +305,7 @@ button:hover {
   border-image-slice: 1;
   box-shadow: 2px 2px 2px #b292ea;
   font-family: 'Open Sans', sans-serif;
-  height: 50%;
+  height: 55%;
   margin: auto;
   text-align: center;
   width: 65%;

@@ -9,7 +9,9 @@ class Project extends Component {
     super();
     this.state = {
       showModal: false,
+      showProject: false,
       currentPalette: {},
+      currentProject: {},
       name: ''
     }
   }
@@ -21,14 +23,30 @@ class Project extends Component {
     this.setState({currentPalette: palette})
   }
   
+  handleOpenProjectModal = (e) => {
+    this.handleChange(e)
+    const { id } = e.target
+    console.log(e.target.id)
+    let project = this.props.projects.find(project => project.id === parseInt(id));
+    console.log(project)
+    this.setState({currentProject: project, showProject:true })
+  }
+
   handleCloseModal = () => {
-    this.setState({ showModal: false });
+    this.setState({ showModal: false, showProject: false });
   }
 
   handleChange = (e) => {
     const { value } = e.target;
     const newState = {...this.state.currentPalette, name:value}
     this.setState({ name: value, currentPalette: newState })
+  }
+
+  handleProjectChange = (e) => {
+    const { value } = e.target;
+    console.log(value)
+    const newState = {...this.state.currentProject, name:value}
+    this.setState({ currentProject: newState })
   }
 
   updatePalette = (id) => {
@@ -49,6 +67,22 @@ class Project extends Component {
       })
     };
     fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    .then(response =>  response.json())
+    .then(result => console.log(result))
+  }
+
+  updateProject = (id) => {
+    let option = {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.currentProject.name
+      })
+    };
+    fetch(`http://localhost:3001/api/v1/projects/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
@@ -108,21 +142,32 @@ class Project extends Component {
         <button className="update-palette-modal" onClick={() => this.updatePalette(this.state.currentPalette.id)}>Save Changes</button>
       </div>)
 
+let displayProjectModal = (<div className="project-section-modal">
+        <div className="edit-project-name-modal">
+          <h2 className="mini-palette-name-modal">Edit {this.state.currentProject.name}</h2>
+          <input type="text" className="project-name-input-modal" onChange={this.handleProjectChange} value={this.state.currentProject.name} />
+          <button onClick={() => this.deleteProject(this.state.currentProject.id)} className="delete-modal">Delete Project</button>
+        </div>
+        <button className="update-palette-modal" onClick={this.handleCloseModal}>Close & Don't Save</button>
+        <button className="update-palette-modal" onClick={() => this.updateProject(this.state.currentProject.id)}>Save Changes</button>
+        </div>)
+
   return (
     <section>
       <article className="Project">
         <h4 className="Project-name">
-        <i className="fas fa-folder-open project-icon" onClick={this.handleOpenModal}></i>
+        <i id={this.props.id} className="fas fa-folder-open project-icon" onClick={this.handleOpenProjectModal}></i>
         {this.props.name}</h4>
         <div className="display-donuts">
           {displayDonuts}
         </div>
       </article>
       <ReactModal 
-           isOpen={this.state.showModal}
+           isOpen={this.state.showModal || this.state.showProject}
            contentLabel="Palette Modal">
            <div className="modal-display-donuts">
           { this.state.showModal && displayModal }
+          { this.state.showProject && displayProjectModal }
           </div>
         </ReactModal>
     </section>
