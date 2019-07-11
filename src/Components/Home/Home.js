@@ -85,7 +85,7 @@ export default class Home extends Component {
         color_6: this.state.hex[5] 
       })
     };
-    fetch("http://localhost:3001/api/v1/palettes", option)
+    fetch("https://donut-picker-be.herokuapp.com/api/v1/palettes", option)
     .then(response =>  response.json())
     .then(result => console.log(result))
 }

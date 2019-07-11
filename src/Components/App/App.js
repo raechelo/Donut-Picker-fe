@@ -21,12 +21,12 @@ class App extends Component {
   }
 
   fetchProjects = () => {
-    fetchData("http://localhost:3001/api/v1/projects", "projects")
+    fetchData("https://donut-picker-be.herokuapp.com/api/v1/projects", "projects")
       .then(projects => this.setState({ projects }))
   };
 
   fetchPalettes = () => {
-    fetchData("http://localhost:3001/api/v1/palettes", "palettes")
+    fetchData("https://donut-picker-be.herokuapp.com/api/v1/palettes", "palettes")
       .then(palettes => this.setState({ palettes }))
   };
 

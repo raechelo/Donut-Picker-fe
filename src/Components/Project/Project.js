@@ -64,7 +64,7 @@ class Project extends Component {
         color_6: this.state.currentPalette.color_6
       })
     };
-    fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    fetch(`https://donut-picker-be.herokuapp.com/api/v1/palettes/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
@@ -80,7 +80,7 @@ class Project extends Component {
         name: this.state.currentProject.name
       })
     };
-    fetch(`http://localhost:3001/api/v1/projects/${id}`, option)
+    fetch(`https://donut-picker-be.herokuapp.com/api/v1/projects/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
@@ -96,7 +96,7 @@ class Project extends Component {
         id: id
       })
     };
-    fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    fetch(`https://donut-picker-be.herokuapp.com/api/v1/palettes/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
@@ -112,7 +112,7 @@ class Project extends Component {
         id: id
       })
     };
-    fetch(`http://localhost:3001/api/v1/projects/${id}`, option)
+    fetch(`https://donut-picker-be.herokuapp.com/api/v1/projects/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
