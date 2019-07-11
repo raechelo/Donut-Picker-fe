@@ -21,6 +21,7 @@ class Projects extends Component {
   postProject = () => {
     
   }
+
   componentDidMount = () => {
     this.gatherPalettes()
   }

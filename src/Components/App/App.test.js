@@ -7,10 +7,10 @@ describe("App", () => {
   const mockFunction = jest.fn();
   let wrapper = shallow(<App/>);
   let mockGET;
-  let mockDAta
+  let mockData
 
   beforeEach(() => {
-    mockDAta = [{ name: "A test"},{ name: "another test"}];
+    mockData = [{ name: "A test"},{ name: "another test"}];
     window.fetch = jest.fn().mockImplementation(() =>
     Promise.resolve({
       ok: true,
@@ -44,22 +44,10 @@ describe("App", () => {
     wrapper.instance().componentDidMount();
     expect(mockFn).toHaveBeenCalled();
   });
-  it.only("should call fetchProjects() on componentDidMount", () => {
+  it("should call fetchProjects() on componentDidMount", () => {
     let mockFn = jest.spyOn(wrapper.instance(), "fetchPalettes");
     wrapper.instance().componentDidMount();
     expect(mockFn).toHaveBeenCalled();
   });
 
-  
-
-  it("should take an expected URL;", async () => {
-    await fetchAllNotes(mockGET);
-    expect(fetch).toHaveBeenCalledWith(URL);
-  });
-
-  it("should return expected notes", async () => {
-    const result = await fetchAllNotes(URL, mockGET);
-    expect(result).toEqual(mockNotes);
-  });
-
-});
+})

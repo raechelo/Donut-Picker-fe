@@ -18,7 +18,12 @@ class Project extends Component {
     this.setState({ showModal: false });
   }
 
- render() {
+  let palettes = props.palettes.filter(palette => {
+  return palette.project_id === props.id
+}) 
+let listItems = palettes.map(palette => <li key={shortid.generate()}>{palette.name}</li>)
+
+render() {
    
   let palettes = this.props.palettes.filter(palette => {
     return palette.project_id === this.props.id
@@ -58,6 +63,6 @@ class Project extends Component {
     </section>
     )
   }
-}
+
 
 export default Project;
