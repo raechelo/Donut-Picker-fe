@@ -26,7 +26,6 @@ class Project extends Component {
   handleOpenProjectModal = (e) => {
     this.handleChange(e)
     const { id } = e.target
-    console.log(e.target.id)
     let project = this.props.projects.find(project => project.id === parseInt(id));
     console.log(project)
     this.setState({currentProject: project, showProject:true })
@@ -99,6 +98,22 @@ class Project extends Component {
       })
     };
     fetch(`http://localhost:3001/api/v1/palettes/${id}`, option)
+    .then(response =>  response.json())
+    .then(result => console.log(result))
+  }
+
+  deleteProject = (id) => {
+    let option = {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id
+      })
+    };
+    fetch(`http://localhost:3001/api/v1/projects/${id}`, option)
     .then(response =>  response.json())
     .then(result => console.log(result))
   }
