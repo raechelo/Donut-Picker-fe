@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import MiniDonut from  '../MiniDonut/MiniDonut';
+const shortid = require("shortid");
+
 
 class Project extends Component {
   constructor() {
@@ -28,7 +30,7 @@ class Project extends Component {
 
   let displayDonuts = palettes.map((palette, i) => {
     if (palette[`color_${i+1}`][0] === '#') {
-      return (<div className="mini-donut-section">
+      return (<div key={shortid.generate()} className="mini-donut-section">
         <h2 className="mini-palette-name">{palette.name}</h2>
         <i onClick={this.handleOpenModal} className="fas fa-pencil-alt project-icon edit-palette"></i>
         <MiniDonut fill={palette[`color_${i+1}`]} />

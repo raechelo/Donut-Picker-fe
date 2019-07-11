@@ -4,9 +4,9 @@ import Project from './Project'
 
 describe('Project', () => {
     let wrapper;
-    let mockProps = [{id: 5}]
+    let mockProps = [{color_1: "#FFF", color_2: "#FFF", color_3: "#FFF"}]
     wrapper = shallow(<Project palettes = {mockProps}/>)
-    it('should matchn', () => {
+    it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
         
     });
