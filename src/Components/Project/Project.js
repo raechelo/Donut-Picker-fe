@@ -51,12 +51,12 @@ class Project extends Component {
       return (<div key={shortid.generate()} className="mini-donut-section">
         <h2 className="mini-palette-name">{palette.name}</h2>
         <i id={palette.id} onClick={this.handleOpenModal} className="fas fa-pencil-alt project-icon edit-palette"></i>
-        <MiniDonut fill={palette[`color_${i+1}`]} />
-        <MiniDonut fill={palette[`color_${i+2}`]} />
-        <MiniDonut fill={palette[`color_${i+3}`]} />
-        <MiniDonut fill={palette[`color_${i+4}`]} />
-        <MiniDonut fill={palette[`color_${i+5}`]} />
-        <MiniDonut fill={palette[`color_${i+6}`]} />
+        <MiniDonut fill={palette.color_1} />
+        <MiniDonut fill={palette.color_2} />
+        <MiniDonut fill={palette.color_3} />
+        <MiniDonut fill={palette.color_4} />
+        <MiniDonut fill={palette.color_5} />
+        <MiniDonut fill={palette.color_6} />
       </div>)
     }
   });
