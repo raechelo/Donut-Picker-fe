@@ -34,18 +34,13 @@
     ]
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-eslint": "^10.0.2",
-    "eslint": "^6.0.1",
-    "eslint-config-standard": "^13.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/App.js"
+      "!src/index.js"
     ]
   }
 }
