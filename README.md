@@ -24,6 +24,11 @@ Wireframe
 
 Final Product
 
+![2019-07-10 22 34 00](https://user-images.githubusercontent.com/39016273/61022472-24713700-a363-11e9-8d77-dd17658da690.gif)
+
+![2019-07-10 22 35 35](https://user-images.githubusercontent.com/39016273/61022489-3fdc4200-a363-11e9-9eab-817e10a02c6a.gif)
+
+
 ## Learning Goals
 
 Palette Picker is a project designed for developers to use multiple environments including the development, testing, and continuous integration environments, as well as solidify their knowledge of server-side testing and connecting a front and backend with CORS.
@@ -31,3 +36,5 @@ Palette Picker is a project designed for developers to use multiple environments
 Additionally, this project was intended for students to really dive deep into utilizing issues, templates, and code reviews to effectively collaborate on a project and to mimic a real-world environment. (Another environment! 💪)
 
 ## Contributors
+(Raechel Odom)[github.com/raechelo]
+{Rachael Drennan)[github.com/rdren0]
