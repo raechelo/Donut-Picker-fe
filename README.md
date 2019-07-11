@@ -20,7 +20,7 @@ With Palette-Picker, a user can create new projects with unique names and create
 
 Wireframe
 
-[Get Colors.pdf](https://github.com/raechelo/Palette-Picker-fe/files/3380269/Get.Colors.pdf)
+![Get Colors(1)](https://user-images.githubusercontent.com/39016273/61022609-db6db280-a363-11e9-8382-206dcd696d7c.jpg)
 
 Final Product
 
