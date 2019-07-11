@@ -15,6 +15,7 @@ svg {
 
 .mini-donut {
   height: 15%;
+  width: 25%
 }
 
 .App {
@@ -96,6 +97,8 @@ button:hover {
 .display-donuts, .mini-donut-section {
   display: flex;
   justify-content: space-between;
+  flex-flow: row;
+ 
 }
 
 .all-projects {
