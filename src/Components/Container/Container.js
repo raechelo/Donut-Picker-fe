@@ -66,11 +66,10 @@ export class Container extends Component {
             className="project-name-input palette-input"
             type="text"
             placeholder="New Palette Name"
-
+            maxLength='25'
           />
           <button id="save-btn" onClick={(e) => this.savePalette(e)}>Save Palette to Project</button>
           <Link exact to="/projects" >
-
             <button className="view-projects-btn"> View All Projects</button>
           </Link>
         </section>
