@@ -26,6 +26,11 @@ describe('Home', () => {
         wrapper.instance().savePalette();
         expect(window.fetch).toHaveBeenCalledWith(URL, {"body": "{}", "headers": {"Accept": "application/json", "Content-Type": "application/json"}, "method": "PUT"})
       });
+      it('should update state on lockDonut ', () => {
+        wrapper.setState({ name: 'test' });
+        wrapper.instance().lockDonut("#FFF", 2)
+        expect(wrapper.state('name')).toEqual("test")
+    });
       
     
 });

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint-config-standard": "^13.0.0",
     "knex": "^0.18.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -40,7 +41,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/index.js"
+      "!src/index.js",
+      "!src/App.js"
     ]
   }
 }
