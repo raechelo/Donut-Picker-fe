@@ -39,7 +39,7 @@ class Project extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: this.state.currentPalette.title, 
+        name: this.state.currentPalette.name, 
         color_1: this.state.currentPalette.color_1,
         color_2: this.state.currentPalette.color_2,
         color_3: this.state.currentPalette.color_3,
