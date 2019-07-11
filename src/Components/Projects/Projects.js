@@ -19,7 +19,19 @@ class Projects extends Component {
   }
 
   postProject = () => {
-    
+    let option = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: this.state.name
+      })
+    }
+    fetch("http://localhost:3001/api/v1/projects", option)
+    .then(response => response.json())
+    .then(result => console.log(result))
   }
 
   componentDidMount = () => {
@@ -41,7 +53,7 @@ class Projects extends Component {
       </Link>
       <h4 className="project-header">My Projects</h4>
       <div className="new-project">
-        <input type="text" onChange={this.handleChange} placeholder="My New Project" />
+        <input type="text" onChange={this.handleChange} placeholder="My New Project" value={this.state.name} />
         <button onClick={this.postProject} className="add-new-project"> + </button>
       </div>
         <section className="all-projects">

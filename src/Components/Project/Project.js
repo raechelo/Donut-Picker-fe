@@ -7,7 +7,7 @@ class Project extends Component {
     super();
     this.state = {
       showModal: false,
-      currentPalette: ''
+      currentPalette: {}
     }
   }
 
@@ -20,6 +20,12 @@ class Project extends Component {
   
   handleCloseModal = () => {
     this.setState({ showModal: false });
+  }
+
+  handleChange = (e) => {
+    const { value } = e.target;
+    const { name } = this.state.currentPalette
+    name = value
   }
 
   render() {
@@ -43,15 +49,21 @@ class Project extends Component {
     }
   });
 
-  let displayModal = (<div className="mini-donut-section">
-        <h2 className="mini-palette-name">Edit {this.state.currentPalette.name}</h2>
-        <input type="text" placeholder={this.state.currentPalette.name} />
-        <MiniDonut fill={this.state.currentPalette.color_1} />
-        <MiniDonut fill={this.state.currentPalette.color_2} />
-        <MiniDonut fill={this.state.currentPalette.color_3} />
-        <MiniDonut fill={this.state.currentPalette.color_4} />
-        <MiniDonut fill={this.state.currentPalette.color_5} />
-        <MiniDonut fill={this.state.currentPalette.color_6} />
+  let displayModal = (<div className="mini-donut-section-modal">
+        <div className="edit-project-name-modal">
+          <h2 className="mini-palette-name-modal">Edit {this.state.currentPalette.name}</h2>
+          <input type="text" className="project-name-input-modal" onChange={this.handleChange} />
+          <button onClick={this.handleCloseModal} className="delete-modal">Delete Project</button>
+        </div>
+        <div className="mini-donuts-modal">
+          <MiniDonut fill={this.state.currentPalette.color_1} />
+          <MiniDonut fill={this.state.currentPalette.color_2} />
+          <MiniDonut fill={this.state.currentPalette.color_3} />
+          <MiniDonut fill={this.state.currentPalette.color_4} />
+          <MiniDonut fill={this.state.currentPalette.color_5} />
+          <MiniDonut fill={this.state.currentPalette.color_6} />
+        </div>
+        <button onClick={this.handleCloseModal}>Close</button>
       </div>)
 
   return (
@@ -68,10 +80,8 @@ class Project extends Component {
            isOpen={this.state.showModal}
            contentLabel="Palette Modal">
            <div className="modal-display-donuts">
-           <input type="text" placeholder="project" maxLength='25' />
           { this.state.showModal && displayModal }
           </div>
-          <button onClick={this.handleCloseModal}>Close</button>
         </ReactModal>
     </section>
     )
