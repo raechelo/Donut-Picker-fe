@@ -36,5 +36,6 @@ Palette Picker is a project designed for developers to use multiple environments
 Additionally, this project was intended for students to really dive deep into utilizing issues, templates, and code reviews to effectively collaborate on a project and to mimic a real-world environment. (Another environment! 💪)
 
 ## Contributors
-(Raechel Odom)[github.com/raechelo]
-{Rachael Drennan)[github.com/rdren0]
+Raechel Odom: github.com/raechelo
+   
+Rachael Drennan: github.com/rdren0
