@@ -30,13 +30,13 @@ class Project extends Component {
     if (palette[`color_${i+1}`][0] === '#') {
       return (<div className="mini-donut-section">
         <h2 className="mini-palette-name">{palette.name}</h2>
+        <i onClick={this.handleOpenModal} className="fas fa-pencil-alt project-icon edit-palette"></i>
         <MiniDonut fill={palette[`color_${i+1}`]} />
         <MiniDonut fill={palette[`color_${i+2}`]} />
         <MiniDonut fill={palette[`color_${i+3}`]} />
         <MiniDonut fill={palette[`color_${i+4}`]} />
         <MiniDonut fill={palette[`color_${i+5}`]} />
         <MiniDonut fill={palette[`color_${i+6}`]} />
-        <i onClick={this.handleOpenModal} className="fas fa-pencil-alt project-icon edit-palette"></i>
       </div>)
     }
   });
@@ -56,6 +56,7 @@ class Project extends Component {
            contentLabel="Palette Modal">
            <div className="modal-display-donuts">
            <input type="text" placeholder="project" maxLength='25' />
+
           </div>
           <button onClick={this.handleCloseModal}>Close</button>
         </ReactModal>

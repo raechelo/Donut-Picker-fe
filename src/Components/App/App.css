@@ -259,11 +259,6 @@ button:hover {
   right: 3%;
 }
 
-.ReactModal__Content {
-  border: none;
-  background-color: magenta;
-}
-
 .ReactModal__Content--after-open {
   border: 3px solid transparent;
   border-image: linear-gradient(to bottom right, #b292ea 0%, #70cddf 25%, #eba0d8 50%, #fadfd4 75%, #6fc2cc 100%);
