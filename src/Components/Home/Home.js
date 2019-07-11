@@ -91,14 +91,6 @@ export default class Home extends Component {
     .then(result => console.log(result))
 }
 
-findProject = (palette, project) => {
-  let foundProject;
-  fetch(`http://localhost:3001/api/v1/projects/${project.name}`)
-  .then(response => response.json())
-  .then(result => foundProject = result)
-  this.savePalette(palette, foundProject)
-}
-
   componentDidMount = () => {
     this.freshPalette();
   };
