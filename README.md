@@ -1,4 +1,4 @@
-# Palette-Picker
+# Donut-Picker
 Check the live app out [here](https://donut-picker.herokuapp.com/)!
 The backend repository is available [here](https://github.com/raechelo/palette-picker-be).
 
