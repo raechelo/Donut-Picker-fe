@@ -10,7 +10,7 @@
     "react-dropdown": "^1.6.4",
     "react-modal": "^3.8.2",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "shortid": "^2.2.14"
   },
   "scripts": {
